@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #session stuff later
+      session[:user_id] = @user.id
       flash[:notice] = "Successful login"
       redirect_to user_path(@user)
     else
-      #what to put here? need sad path
+      redirect_to login_path
     end
   end
 

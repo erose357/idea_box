@@ -18,6 +18,6 @@ RSpec.feature "User creates a new account" do
 
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Welcome, #{user.username}")
-    #expect(page).to have_content("Successful login")
+    expect(page).to have_content("Successful login")
   end
 end
