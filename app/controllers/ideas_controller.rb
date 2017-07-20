@@ -11,7 +11,8 @@ class IdeasController < ApplicationController
       flash[:notice] = "Idea created!"
       redirect_to user_path(user)
     else
-      render new_user_idea_path(user)
+      flash[:notice] = "All fields must be filled in"
+      redirect_to new_user_idea_path(user.id)
     end
   end
 
