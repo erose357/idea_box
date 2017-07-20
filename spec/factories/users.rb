@@ -1,8 +1,20 @@
 FactoryGirl.define do
   factory :user do
-  username "Al"
-  email "al@email.com"
-  password "password"
-  #role 0 
+    sequence :username do |i|
+      "tom#{i}"
+    end
+
+    sequence :email do |i|
+      "tom@officespace.com#{i}"
+    end
+
+    password "password"
+    #role 0
+
+    factory :user_with_ideas do
+      after(:create) do |user|
+        create_list(:idea, 2, :user => user)
+      end
+    end
   end
 end

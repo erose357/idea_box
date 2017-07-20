@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   enum role: ["user", "admin"]
 
+  has_many :ideas
+
 end

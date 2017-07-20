@@ -1,2 +1,10 @@
 <h1>User's Show Page</h1>
 <h2>Welcome, <%= @user.username %></h2>
+
+<ul>
+  <% @user.ideas.each do |idea| %>
+    <li><%= link_to idea.title, user_idea_path(@user, idea) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Idea", new_user_idea_path(@user) %>
