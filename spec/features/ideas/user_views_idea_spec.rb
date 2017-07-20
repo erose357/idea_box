@@ -9,10 +9,10 @@ RSpec.describe "User views one idea" do
     expect(current_path).to eq("/users/#{user.id}")
     expect(page).to have_content("Welcome, #{user.username}")
 
-    click_link "Jump to Conclusions Mat1"
+    click_link "#{user.ideas[0].title}"
 
     expect(current_path).to eq(user_idea_path(user.id, user.ideas[0].id))
-    expect(page).to have_css("h1", :text => "Jump to Conclusions Mat1")
+    expect(page).to have_css("h1", :text => "Jump to Conclusions Mat")
     expect(page).to have_css("p", :text => "It has conclusions")
   end
 end

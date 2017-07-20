@@ -1,3 +1,4 @@
 <h1><%= @idea.title %></h1>
 
 <p><%= @idea.description %></p>
+<%= link_to "Edit", edit_user_idea_path(@idea.user, @idea) %>
