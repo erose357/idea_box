@@ -2,3 +2,4 @@
 
 <p><%= @idea.description %></p>
 <%= link_to "Edit", edit_user_idea_path(@idea.user, @idea) %>
+<%= link_to "Delete", user_idea_path(@idea.user, @idea), method: :delete %>

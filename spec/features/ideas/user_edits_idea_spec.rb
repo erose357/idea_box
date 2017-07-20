@@ -17,7 +17,7 @@ RSpec.describe "User edits an idea" do
     fill_in "idea[title]", with: "Updated Idea"
 
     click_on "Update Idea"
-# save_and_open_page
+
     expect(current_path).to eq(user_idea_path(user, user.ideas[0].id))
     expect(page).to have_content("Updated Idea")
     expect(page).to_not have_content("Jump to Conclusions Mat")
