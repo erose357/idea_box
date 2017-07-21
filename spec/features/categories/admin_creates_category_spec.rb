@@ -18,4 +18,17 @@ RSpec.describe "Admin creates category" do
       expect(page).to have_css("li", :text => "Invention")
     end
   end
+
+  context "as a default user" do
+    it "should not be able to create a category" do
+      user = create(:user)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit new_admin_category_path
+
+      expect(page).to_not have_content("Categories Index")
+      expect(page).to have_content("The page you were looking for doesn't exist")
+    end
+  end
 end
