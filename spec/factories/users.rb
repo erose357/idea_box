@@ -9,7 +9,7 @@ FactoryGirl.define do
     end
 
     password "password"
-    #role 0
+    role 0
 
     factory :user_with_ideas do
       after(:create) do |user|
