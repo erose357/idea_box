@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_current_user
+  
   def new
     @user = User.new
   end
