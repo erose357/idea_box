@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :require_current_user
-  
+  before_action :require_current_user, except: [:new, :create]
+  #before_action :check_user, except: [:new, :create]
+  #skip_before_action :require_current_user, only: [:new]
+
   def new
     @user = User.new
   end
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def destroy
