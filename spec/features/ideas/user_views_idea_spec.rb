@@ -4,6 +4,8 @@ RSpec.describe "User views one idea" do
   scenario "user see view page for that idea" do
     user = create(:user_with_ideas)
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
     visit user_path(user)
 
     expect(current_path).to eq("/users/#{user.id}")

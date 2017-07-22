@@ -4,6 +4,8 @@ RSpec.describe "User edits an idea" do
   scenario "a user can edit an idea" do
     user = create(:user_with_ideas)
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
     visit user_path(user)
 
     click_link "#{user.ideas[0].title}", :match => :first
