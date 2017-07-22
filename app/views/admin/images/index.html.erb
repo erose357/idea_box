@@ -1,0 +1,8 @@
+<h1>Images Index</h1>
+<ul>
+<% @images.each do |image| %>
+  <li><%= image.name %> <img src="<%= image.url %>" alt="light bulb"></li>
+
+<% end %>
+</ul>
+<%= link_to "New Image", new_admin_image_path  %>
