@@ -1,7 +1,7 @@
 <h1>Images Index</h1>
 <ul>
 <% @images.each do |image| %>
-  <li><%= image.name %> <img src="<%= image.url %>" alt="light bulb"></li>
+  <li><%= image.name %> <img src="<%= image.url %>" alt="light bulb"> <%= link_to "Delete", admin_image_path(image), method: :delete %></li>
 
 <% end %>
 </ul>
