@@ -13,7 +13,7 @@ RSpec.feature "User deletes account" do
 
     click_on "Login"
 
-    click_on "Delete Account"
+    click_on "Close Account"
 
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content("Welcome, #{user.username}")

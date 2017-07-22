@@ -16,7 +16,7 @@
       <% if current_user %>
           Welcome, <%= current_user.username %>
           <%= link_to "Logout", logout_path, method: :delete %>
-          <%= link_to "Delete Account", user_path(current_user), method: :delete %>
+          <%= link_to "Close Account", user_path(current_user), method: :delete %>
         <% else %>
           <%= link_to "User Login", login_path %>
         <% end %>
