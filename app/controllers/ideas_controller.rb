@@ -12,7 +12,7 @@ class IdeasController < ApplicationController
       redirect_to user_path(user)
     else
       flash[:notice] = "All fields must be filled in"
-      redirect_to new_user_idea_path(user.id)
+      render :new
     end
   end
 
@@ -43,6 +43,6 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :description)
+    params.require(:idea).permit(:title, :description, :category_id)
   end
 end

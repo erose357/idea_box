@@ -4,6 +4,7 @@ FactoryGirl.define do
       "Jump to Conclusions Mat#{i}"
     end
     description "It has conclusions and you jump to them"
-    user nil
+    user
+    category
   end
 end

@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe "User deletes idea" do
   scenario "user can delete an idea" do
     user = create(:user_with_ideas)
-    idea = create(:idea, title: "pet rock", user: user)
+    category = create(:category)
+    idea = create(:idea, title: "pet rock", user: user, category: category)
+
 
     visit user_idea_path(user, idea)
 
