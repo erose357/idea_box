@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :ideas
   end
 
+  resources :images, only: [:index]
+
   root "welcome#index"
 end
