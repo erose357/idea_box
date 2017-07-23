@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @idea = @user.ideas.new
+    @images = Image.all
   end
 
   def create
